@@ -7,354 +7,56 @@
   <meta name="author" content="Rongrong Liu">
   <title>Rongrong Liu</title>
   <style>
-    :root {
-      --ink: #171717;
-      --muted: #5d6268;
-      --line: #d9dde2;
-      --soft: #f6f7f8;
-      --link: #174a7e;
-      --max: 980px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: #fff;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 17px;
-      line-height: 1.58;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover, a:focus { text-decoration: underline; }
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-    }
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 11px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .nav-name {
-      font-weight: 700;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 14px 20px;
-      font-size: 15px;
-    }
-    .nav-links a { color: #35393d; }
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 54px 24px 72px;
-    }
-    header.hero {
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 32px;
-    }
-    h1 {
-      margin: 0 0 5px;
-      font-size: clamp(34px, 5vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-    .research-line {
-      margin: 9px 0 16px;
-      font-style: italic;
-      font-size: 18px;
-      color: #303338;
-    }
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 9px 14px;
-      font-size: 16px;
-    }
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-    .button {
-      display: inline-block;
-      padding: 8px 13px;
-      border: 1px solid #8c939a;
-      border-radius: 4px;
-      color: var(--ink);
-      background: #fff;
-      font-size: 15px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 600;
-      text-decoration: none !important;
-    }
-    .button.primary {
-      color: #fff;
-      background: #1c2630;
-      border-color: #1c2630;
-    }
-    section { scroll-margin-top: 72px; margin-top: 32px; }
-    h2 {
-      margin: 0 0 15px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid var(--ink);
-      font-size: 22px;
-      line-height: 1.25;
-    }
-    .intro {
-      max-width: 850px;
-      color: #303338;
-      margin: 0;
-    }
-    .entry { margin: 0 0 24px; }
-    .entry:last-child { margin-bottom: 0; }
-    .entry-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px 18px;
-      align-items: baseline;
-    }
-    .entry-title { font-weight: 700; }
-    .entry-date {
-      white-space: nowrap;
-      color: #3f4348;
-      font-size: 16px;
-    }
-    .entry-sub {
-      margin-top: 1px;
-      font-style: italic;
-      color: #3e4348;
-    }
-    ul {
-      margin: 7px 0 0;
-      padding-left: 22px;
-    }
-    li { margin: 4px 0; }
-    .compact p { margin: 3px 0; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 26px;
-    }
-    .skills-grid p { margin: 0; }
-    .label { font-weight: 700; }
-    footer {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 22px 24px 36px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    @media (max-width: 720px) {
-      body { font-size: 16px; }
-      .site-nav { position: static; }
-      .nav-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
-      .nav-links { justify-content: flex-start; gap: 8px 14px; }
-      main { padding-top: 34px; }
-      .entry-head { grid-template-columns: 1fr; gap: 1px; }
-      .entry-date { white-space: normal; }
-      .skills-grid { grid-template-columns: 1fr; }
-    }
-    @media print {
-      .site-nav, .buttons, footer { display: none; }
-      main { max-width: none; padding: 0; }
-      body { font-size: 10.5pt; line-height: 1.35; }
-      h1 { font-size: 18pt; }
-      h2 { font-size: 12pt; margin-top: 12pt; }
-      section { margin-top: 12pt; }
-      .entry { margin-bottom: 9pt; break-inside: avoid; }
-      a { color: #000; }
-    }
+    :root { --ink:#171717; --muted:#5d6268; --line:#d9dde2; --link:#174a7e; --max:980px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:Georgia,"Times New Roman",Times,serif; font-size:17px; line-height:1.58; -webkit-font-smoothing:antialiased; }
+    a { color:var(--link); text-decoration:none; } a:hover,a:focus { text-decoration:underline; }
+    .site-nav { position:sticky; top:0; z-index:10; background:rgba(255,255,255,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(8px); }
+    .nav-inner { max-width:var(--max); margin:0 auto; padding:11px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .nav-name { font-weight:700; color:var(--ink); white-space:nowrap; }
+    .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:14px 20px; font-size:15px; } .nav-links a { color:#35393d; }
+    main { max-width:var(--max); margin:0 auto; padding:54px 24px 72px; }
+    header.hero { padding-bottom:28px; border-bottom:1px solid var(--line); margin-bottom:32px; }
+    h1 { margin:0 0 5px; font-size:clamp(34px,5vw,48px); line-height:1.08; letter-spacing:-.02em; }
+    .research-line { margin:9px 0 16px; font-style:italic; font-size:18px; color:#303338; }
+    .contact-row,.buttons { display:flex; flex-wrap:wrap; align-items:center; gap:9px 14px; font-size:16px; }
+    .buttons { gap:10px; margin-top:18px; }
+    .button { display:inline-block; padding:8px 13px; border:1px solid #8c939a; border-radius:4px; color:var(--ink); background:#fff; font-size:15px; font-family:Arial,Helvetica,sans-serif; font-weight:600; text-decoration:none!important; }
+    .button.primary { color:#fff; background:#1c2630; border-color:#1c2630; }
+    section { scroll-margin-top:72px; margin-top:32px; }
+    h2 { margin:0 0 15px; padding-bottom:5px; border-bottom:1px solid var(--ink); font-size:22px; line-height:1.25; }
+    .intro { max-width:850px; color:#303338; margin:0; }
+    .entry { margin:0 0 24px; } .entry:last-child { margin-bottom:0; }
+    .entry-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px 18px; align-items:baseline; }
+    .entry-title,.label { font-weight:700; } .entry-date { white-space:nowrap; color:#3f4348; font-size:16px; }
+    .entry-sub { margin-top:1px; font-style:italic; color:#3e4348; }
+    ul { margin:7px 0 0; padding-left:22px; } li { margin:4px 0; } .compact p { margin:3px 0; }
+    .skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px 26px; } .skills-grid p { margin:0; }
+    footer { max-width:var(--max); margin:0 auto; padding:22px 24px 36px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; font-family:Arial,Helvetica,sans-serif; }
+    @media(max-width:720px){ body{font-size:16px}.site-nav{position:static}.nav-inner{align-items:flex-start;flex-direction:column;gap:8px}.nav-links{justify-content:flex-start;gap:8px 14px}main{padding-top:34px}.entry-head{grid-template-columns:1fr;gap:1px}.entry-date{white-space:normal}.skills-grid{grid-template-columns:1fr} }
+    @media print { .site-nav,.buttons,footer{display:none} main{max-width:none;padding:0} body{font-size:10.5pt;line-height:1.35} h1{font-size:18pt} h2{font-size:12pt;margin-top:12pt} section{margin-top:12pt}.entry{margin-bottom:9pt;break-inside:avoid}a{color:#000} }
   </style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="nav-name" href="#top">Rongrong Liu</a>
-      <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-      </div>
-    </div>
-  </nav>
-
-  <main id="top">
-    <header class="hero">
-      <h1>Rongrong Liu</h1>
-      <p class="research-line">Natural Language Processing · Retrieval-Augmented Generation · Multimodal Learning · LLM Evaluation</p>
-      <div class="contact-row">
-        <a href="mailto:rliu112@jh.edu">rliu112@jh.edu</a>
-        <span>·</span>
-        <a href="https://github.com/QronG9" target="_blank" rel="noopener">github.com/QronG9</a>
-        <span>·</span>
-        <span>+86-136-0765-2941</span>
-      </div>
-      <div class="buttons">
-        <a class="button primary" href="mailto:rliu112@jh.edu">Email</a>
-        <a class="button" href="https://github.com/QronG9" target="_blank" rel="noopener">GitHub</a>
-        <a class="button" href="Rongrong_Liu_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
-    </header>
-
-    <section id="about">
-      <h2>About</h2>
-      <p class="intro">I work on reliable and knowledge-intensive AI systems, with current interests in retrieval-augmented generation, LLM evaluation, multimodal generative models, and document intelligence. My research and engineering experience spans multi-hop retrieval, citation faithfulness, controllable video editing, OCR/document AI, and empirical evaluation of frontier AI systems.</p>
-    </section>
-
-    <section id="research">
-      <h2>Research Experience</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Multimodal Generative Models for Controllable Video Editing</div>
-          <div class="entry-date">Sep 2025 – Present</div>
-        </div>
-        <div class="entry-sub">School of Intelligent Science and Technology, Nanjing University — <a href="https://zili-yi.github.io/" target="_blank" rel="noopener">Prof. Zili Yi's Lab</a></div>
-        <ul>
-          <li>Co-authored <strong>“InstructVVT: Instruction-Driven Video Virtual Try-On without Auxiliary Spatial Priors,”</strong> under review at NeurIPS 2026; the framework combines a Diffusion Transformer (DiT), MLLM-derived semantic guidance, reference-garment conditioning, and language-based target specification without inference-time spatial priors.</li>
-          <li>Built automated data pipelines generating and filtering <strong>1,000+ multimodal video-editing samples</strong>; developed evaluation protocols for instruction alignment, appearance fidelity, structural preservation, and temporal consistency.</li>
-          <li>Surveyed and reproduced representative controllable video-editing approaches and organized major editing settings into a technical taxonomy to support benchmark design and comparative evaluation.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Faithfulness in Knowledge-Intensive Retrieval-Augmented Generation</div>
-          <div class="entry-date">Nov 2025 – Present</div>
-        </div>
-        <div class="entry-sub">Independent Research; collaboration with researchers from UIUC and the First Affiliated Hospital of Zhengzhou University</div>
-        <ul>
-          <li>Redesigned HippoRAG-2-style knowledge organization around relations and logical structures and built experimental pipelines for compositional, cross-document <strong>multi-hop retrieval and reasoning</strong>.</li>
-          <li>Extended the work to citation-faithful clinical RAG, designing evaluation for source correctness, locator-level attribution, and abstention; an expert-validated pilot exposed citation-location errors and failures on unanswerable questions.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="experience">
-      <h2>AI &amp; Research Engineering Experience</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title"><a href="https://pageindex.ai/" target="_blank" rel="noopener">VectifyAI (PageIndex)</a> — AI Backend / Algorithm Intern</div>
-          <div class="entry-date">Dec 2025 – Mar 2026</div>
-        </div>
-        <ul>
-          <li>Built and integrated Mistral/Datalab OCR Server backends supporting the product's <strong><a href="https://app.pageindex.ai/chat" target="_blank" rel="noopener">Reference to Lines</a></strong> functionality; additionally integrated Azure Document Intelligence and Google Document AI, normalizing heterogeneous OCR outputs into a unified <strong>block-level representation</strong> for downstream retrieval.</li>
-          <li>Helped refactor page-level indexing into <strong>block-level semantic retrieval</strong> for RAG document analysis; standardized authentication and configuration across document-intelligence backends and built reproducible backend environments across development and testing.</li>
-          <li>Wrote technical handoff and deployment documentation and supported intern onboarding, translating system architecture, configuration, and testing workflows into reproducible engineering procedures.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Granite Asia (formerly GGV Capital) — Research Intern, Embodied AI</div>
-          <div class="entry-date">Mar 2026 – Jun 2026</div>
-        </div>
-        <ul>
-          <li>Built a multi-axis framework for analyzing <strong>20+ frontier embodied-AI systems</strong> across architecture, training data, controllability, latency, and closed-loop readiness, covering world models, robot learning, and vision-language-action models.</li>
-          <li>Synthesized frontier research and <strong>20+ expert interviews / technical due-diligence discussions</strong> with AI researchers and robotics startups into technical landscape analyses of emerging model paradigms.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Shenwan Hongyuan Securities, FICC — LLM Engineering Intern</div>
-          <div class="entry-date">Jul 2025 – Aug 2025</div>
-        </div>
-        <ul>
-          <li>Deployed Qwen-family LLMs on CentOS/Ubuntu servers and built automated evaluation and monitoring pipelines for financial-news analysis, reducing the system's missed-detection rate from <strong>3% to 0.1%</strong>.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="projects">
-      <h2>Selected Project &amp; Open Source</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title"><a href="https://ai-trend-478401.web.app" target="_blank" rel="noopener">Global AI Research &amp; Capability Trend Dashboard</a></div>
-          <div class="entry-date">Nov 2025</div>
-        </div>
-        <ul>
-          <li>Built and deployed an end-to-end research analytics platform covering <strong>30+ AI subfields (2010–2025)</strong>, with an OpenAlex–GCP data pipeline, Python backend, React/Vite analytics interface, Firebase deployment, automated tests, and Docker support.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div class="entry-title"><a href="https://github.com/OSU-NLP-Group/HippoRAG" target="_blank" rel="noopener">HippoRAG (NeurIPS 2024)</a> — Open-Source Contributor</div>
-          <div class="entry-date">2026</div>
-        </div>
-        <ul>
-          <li>Identified a Python/OpenAI dependency compatibility issue in the local development setup and proposed a fix via <strong><a href="https://github.com/OSU-NLP-Group/HippoRAG/pull/176" target="_blank" rel="noopener">PR #176</a></strong>; the maintainers subsequently updated the dependency configuration.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="education">
-      <h2>Education</h2>
-
-      <article class="entry compact">
-        <div class="entry-head">
-          <div class="entry-title">Nanjing University &amp; Johns Hopkins University</div>
-          <div class="entry-date">Sep 2025 – Present</div>
-        </div>
-        <p><em>M.A. Program in International Studies (International Economics) — Hopkins–Nanjing Center, SAIS</em> · GPA: 3.85/4.0</p>
-        <p>First-Class Graduate Scholarship; Nanjing Scholar; fully funded study and research year at Johns Hopkins University, Washington, DC.</p>
-      </article>
-
-      <article class="entry compact">
-        <div class="entry-head">
-          <div class="entry-title">University of California, Berkeley</div>
-          <div class="entry-date">Jan 2024 – May 2024</div>
-        </div>
-        <p><em>Visiting Student, Haas School of Business</em> · GPA: 4.0/4.0</p>
-      </article>
-
-      <article class="entry compact">
-        <div class="entry-head">
-          <div class="entry-title">Xi'an Jiaotong University</div>
-          <div class="entry-date">Sep 2021 – Jun 2025</div>
-        </div>
-        <p><em>B.A. in Finance</em> · Rank: 11/75 (Top 15%), GPA: 3.49/4.3</p>
-        <p>Coursework: Advanced Mathematics, Linear Algebra, Probability &amp; Statistics, C/C++, Python.</p>
-      </article>
-    </section>
-
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <p><span class="label">Programming:</span> Python, C/C++</p>
-        <p><span class="label">AI/ML:</span> LLMs, RAG, Information Retrieval, Multimodal Models, Diffusion Models, OCR/Document AI</p>
-        <p><span class="label">Research Methods:</span> Benchmark Design, Error Analysis, LLM Evaluation, Conformal Prediction, Statistical Analysis</p>
-        <p><span class="label">Systems:</span> Docker, Git, Linux, GPU Servers, REST APIs, GCP/Firebase</p>
-        <p><span class="label">Languages:</span> English (IELTS 7.5)</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2026 Rongrong Liu · Built as a lightweight static academic homepage.</footer>
-</body>
-</html>
+<nav class="site-nav" aria-label="Primary navigation"><div class="nav-inner"><a class="nav-name" href="#top">Rongrong Liu</a><div class="nav-links"><a href="#research">Research</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#skills">Skills</a></div></div></nav>
+<main id="top">
+<header class="hero"><h1>Rongrong Liu</h1><p class="research-line">Natural Language Processing · Retrieval-Augmented Generation · Multimodal Learning · LLM Evaluation</p><div class="contact-row"><a href="mailto:rliu112@jh.edu">rliu112@jh.edu</a><span>·</span><a href="https://github.com/QronG9" target="_blank" rel="noopener">github.com/QronG9</a><span>·</span><span>+86-136-0765-2941</span></div><div class="buttons"><a class="button primary" href="mailto:rliu112@jh.edu">Email</a><a class="button" href="https://github.com/QronG9" target="_blank" rel="noopener">GitHub</a><a class="button" href="Liu%20Rongrong%20CV.pdf" target="_blank" rel="noopener">Download CV</a></div></header>
+<section id="about"><h2>About</h2><p class="intro">I work on reliable and knowledge-intensive AI systems, with current interests in retrieval-augmented generation, LLM evaluation, multimodal generative models, and document intelligence. My research and engineering experience spans multi-hop retrieval, citation faithfulness, controllable video editing, OCR/document AI, and empirical evaluation of frontier AI systems.</p></section>
+<section id="research"><h2>Research Experience</h2>
+<article class="entry"><div class="entry-head"><div class="entry-title">Multimodal Generative Models for Controllable Video Editing</div><div class="entry-date">Sep 2025 – Present</div></div><div class="entry-sub">School of Intelligent Science and Technology, Nanjing University — <a href="https://zili-yi.github.io/" target="_blank" rel="noopener">Prof. Zili Yi's Lab</a></div><ul><li>Co-authored <strong>“InstructVVT: Instruction-Driven Video Virtual Try-On without Auxiliary Spatial Priors,”</strong> under review at NeurIPS 2026; the framework combines a Diffusion Transformer (DiT), MLLM-derived semantic guidance, reference-garment conditioning, and language-based target specification without inference-time spatial priors.</li><li>Built automated data pipelines generating and filtering <strong>1,000+ multimodal video-editing samples</strong>; developed evaluation protocols for instruction alignment, appearance fidelity, structural preservation, and temporal consistency.</li><li>Surveyed and reproduced representative controllable video-editing approaches and organized major editing settings into a technical taxonomy to support benchmark design and comparative evaluation.</li></ul></article>
+<article class="entry"><div class="entry-head"><div class="entry-title">Faithfulness in Knowledge-Intensive Retrieval-Augmented Generation</div><div class="entry-date">Nov 2025 – Present</div></div><div class="entry-sub">Independent Research; collaboration with researchers from UIUC and the First Affiliated Hospital of Zhengzhou University</div><ul><li>Redesigned HippoRAG-2-style knowledge organization around relations and logical structures and built experimental pipelines for compositional, cross-document <strong>multi-hop retrieval and reasoning</strong>.</li><li>Extended the work to citation-faithful clinical RAG, designing evaluation for source correctness, locator-level attribution, and abstention; an expert-validated pilot exposed citation-location errors and failures on unanswerable questions.</li></ul></article></section>
+<section id="experience"><h2>AI &amp; Research Engineering Experience</h2>
+<article class="entry"><div class="entry-head"><div class="entry-title"><a href="https://pageindex.ai/" target="_blank" rel="noopener">VectifyAI (PageIndex)</a> — AI Backend / Algorithm Intern</div><div class="entry-date">Dec 2025 – Mar 2026</div></div><ul><li>Built and integrated Mistral/Datalab OCR Server backends supporting the product's <strong><a href="https://app.pageindex.ai/chat" target="_blank" rel="noopener">Reference to Lines</a></strong> functionality; additionally integrated Azure Document Intelligence and Google Document AI, normalizing heterogeneous OCR outputs into a unified <strong>block-level representation</strong> for downstream retrieval.</li><li>Helped refactor page-level indexing into <strong>block-level semantic retrieval</strong> for RAG document analysis; standardized authentication and configuration across document-intelligence backends and built reproducible backend environments across development and testing.</li><li>Wrote technical handoff and deployment documentation and supported intern onboarding, translating system architecture, configuration, and testing workflows into reproducible engineering procedures.</li></ul></article>
+<article class="entry"><div class="entry-head"><div class="entry-title">Granite Asia (formerly GGV Capital) — Research Intern, Embodied AI</div><div class="entry-date">Mar 2026 – Jun 2026</div></div><ul><li>Built a multi-axis framework for analyzing <strong>20+ frontier embodied-AI systems</strong> across architecture, training data, controllability, latency, and closed-loop readiness, covering world models, robot learning, and vision-language-action models.</li><li>Synthesized frontier research and <strong>20+ expert interviews / technical due-diligence discussions</strong> with AI researchers and robotics startups into technical landscape analyses of emerging model paradigms.</li></ul></article>
+<article class="entry"><div class="entry-head"><div class="entry-title">Shenwan Hongyuan Securities, FICC — LLM Engineering Intern</div><div class="entry-date">Jul 2025 – Aug 2025</div></div><ul><li>Deployed Qwen-family LLMs on CentOS/Ubuntu servers and built automated evaluation and monitoring pipelines for financial-news analysis, reducing the system's missed-detection rate from <strong>3% to 0.1%</strong>.</li></ul></article></section>
+<section id="projects"><h2>Selected Project &amp; Open Source</h2>
+<article class="entry"><div class="entry-head"><div class="entry-title"><a href="https://ai-trend-478401.web.app" target="_blank" rel="noopener">Global AI Research &amp; Capability Trend Dashboard</a></div><div class="entry-date">Nov 2025</div></div><ul><li>Built and deployed an end-to-end research analytics platform covering <strong>30+ AI subfields (2010–2025)</strong>, with an OpenAlex–GCP data pipeline, Python backend, React/Vite analytics interface, Firebase deployment, automated tests, and Docker support.</li></ul></article>
+<article class="entry"><div class="entry-head"><div class="entry-title"><a href="https://github.com/OSU-NLP-Group/HippoRAG" target="_blank" rel="noopener">HippoRAG (NeurIPS 2024)</a> — Open-Source Contributor</div><div class="entry-date">2026</div></div><ul><li>Identified a Python/OpenAI dependency compatibility issue in the local development setup and proposed a fix via <strong><a href="https://github.com/OSU-NLP-Group/HippoRAG/pull/176" target="_blank" rel="noopener">PR #176</a></strong>; the maintainers subsequently updated the dependency configuration.</li></ul></article></section>
+<section id="education"><h2>Education</h2>
+<article class="entry compact"><div class="entry-head"><div class="entry-title">Nanjing University &amp; Johns Hopkins University</div><div class="entry-date">Sep 2025 – Present</div></div><p><em>M.A. Program in International Studies (International Economics) — Hopkins–Nanjing Center, SAIS</em> · GPA: 3.85/4.0</p><p>First-Class Graduate Scholarship; Nanjing Scholar; fully funded study and research year at Johns Hopkins University, Washington, DC.</p></article>
+<article class="entry compact"><div class="entry-head"><div class="entry-title">University of California, Berkeley</div><div class="entry-date">Jan 2024 – May 2024</div></div><p><em>Visiting Student, Haas School of Business</em> · GPA: 4.0/4.0</p></article>
+<article class="entry compact"><div class="entry-head"><div class="entry-title">Xi'an Jiaotong University</div><div class="entry-date">Sep 2021 – Jun 2025</div></div><p><em>B.A. in Finance</em> · Rank: 11/75 (Top 15%), GPA: 3.49/4.3</p><p>Coursework: Advanced Mathematics, Linear Algebra, Probability &amp; Statistics, C/C++, Python.</p></article></section>
+<section id="skills"><h2>Technical Skills</h2><div class="skills-grid"><p><span class="label">Programming:</span> Python, C/C++</p><p><span class="label">AI/ML:</span> LLMs, RAG, Information Retrieval, Multimodal Models, Diffusion Models, OCR/Document AI</p><p><span class="label">Research Methods:</span> Benchmark Design, Error Analysis, LLM Evaluation, Conformal Prediction, Statistical Analysis</p><p><span class="label">Systems:</span> Docker, Git, Linux, GPU Servers, REST APIs, GCP/Firebase</p><p><span class="label">Languages:</span> English (IELTS 7.5)</p></div></section>
+</main><footer>© 2026 Rongrong Liu · Built as a lightweight static academic homepage.</footer>
+</body></html>
